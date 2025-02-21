@@ -16,12 +16,11 @@ export const searchPokemons = async ({ search }) => {
         } 
     }else{
         try {
-            const response = await fetch(`${URL_POKEAPI}${search}`)
+            const response = await fetch(`${URL_POKEAPI}${search.toLowerCase()}`)
             const json = await response.json()
-            const pokemons = json
     
             return [{
-                id: json.order,  
+                id: json.id,  
                 name: json.name
             }];
         }catch (e) {

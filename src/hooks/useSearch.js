@@ -14,11 +14,7 @@ export function useSearch () {
     if(search==='') {
       setError("Introduce un número o nombre de pokemon")
     }
-
-    if(search.match(/^\d+$/)){
-      setError('Introduce un texto válido')
-      return
-    }
+    
     setError(null)
   }, [search])
 

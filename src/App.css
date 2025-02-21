@@ -1,79 +1,83 @@
 @import "tailwindcss";
 
-.tag-normal{
+.tag-type{
+    @apply text-sm uppercase font-bold py-2 px-3 rounded-4xl min-w-24 shadow-sm;
+}
 
+.tag-normal{
+    @apply text-white bg-gray-400/[65%];
 }
 
 .tag-fighting{
-    
+    @apply text-white bg-orange-700/[85%];
 }
 
 .tag-flying{
-    
+    @apply text-white bg-blue-500/[70%];
 }
 
 .tag-poison{
-    @apply text-sm uppercase font-bold text-white bg-fuchsia-900 py-2 px-3 rounded-4xl min-w-24;
+    @apply text-white bg-fuchsia-900;
 }
 
 .tag-ground{
-    
+    @apply text-white bg-yellow-600/[90%];
 }
 
 .tag-rock{
-    
+    @apply text-white bg-yellow-900/[90%];
 }
 
 .tag-bug{
-    
+    @apply text-white bg-lime-700/[70%];
 }
 
 .tag-ghost{
-    
+    @apply text-white bg-violet-900/[80%];
 }
 
 .tag-steel{
-    
+    @apply text-white bg-gray-500/[85%];
 }
 
 .tag-fire{
-    @apply text-sm uppercase font-bold text-white bg-orange-400 py-2 px-3 rounded-4xl min-w-24;
+    @apply text-white bg-orange-400;
 }
 
 .tag-water{
-    
+    @apply text-white bg-sky-600;
 }
 
 .tag-grass{
-    @apply text-sm uppercase font-bold text-white bg-green-700 py-2 px-3 rounded-4xl min-w-24;
+    @apply text-white bg-green-600/[95%];
 }
 
 .tag-electric{
-    
+    @apply text-white bg-yellow-400;
 }
 
 .tag-psychic{
-    
+    @apply text-white bg-pink-600/[85%];
 }
 
 .tag-ice{
-    
+    @apply text-white bg-cyan-300/[60%];
 }
 
 .tag-dragon{
-    
+    @apply text-white bg-indigo-700;
 }
 
 .tag-dark{
-    
+    @apply text-white bg-stone-700/[90%];
 }
 
 .tag-fairy{
-    
+    @apply text-white bg-fuchsia-400/[60%];
 }
 
 .tag-stellar{
-    
+    @apply text-white bg-teal-400;
 }
 
 .tag-unknown{

@@ -13,8 +13,8 @@ export function PokemonCard ({id,name}){
                 <img src={imgURL} alt={`Imagen de ${pokemonInfo.name}`} />
                 <h2 className="font-bold text-3xl uppercase text-gray-600">{pokemonInfo.name}</h2>
                 <div className="flex items-center text-center flex-wrap gap-2">
-                    <p className={`tag-${pokemonInfo.type1}`}>{pokemonInfo.type1}</p>
-                    {pokemonInfo.type2 && <p className={`tag-${pokemonInfo.type2}`}>{pokemonInfo.type2}</p>}
+                    <p className={`tag-type tag-${pokemonInfo.type1}`}>{pokemonInfo.type1}</p>
+                    {pokemonInfo.type2 && <p className={`tag-type tag-${pokemonInfo.type2}`}>{pokemonInfo.type2}</p>}
                 </div>
                 <div>
                     <button type="button" className="w-35 text-xl p-2 rounded-xl bg-gray-500/[65%] hover:bg-gray-500/[85%] text-gray-100 transition-all duration-400">Ver Más</button>
