@@ -1,10 +1,20 @@
+import PokemonStatsChart from './pokemonStatsChart';
 import { IMAGES_URL } from '../constants';
 
-export function ModalPokemonInfo ({ pokemon,isOpen,closeModal }) {
+export function ModalPokemonInfo ({ pokemon,isOpen,closeModal }) { console.log(pokemon)
     if(!isOpen) return null
 
     const pokemonNumber = pokemon.id.toString().padStart(3, '0')
     const imgURL = pokemon ? IMAGES_URL+pokemonNumber+".png" : ""
+
+    const formattedStats  = [
+        { name: "HP", value: 35 },
+        { name: "Ataque", value: 55 },
+        { name: "Defensa", value: 40 },
+        { name: "At. Esp.", value: 50 },
+        { name: "Def. Esp.", value: 50 },
+        { name: "Velocidad", value: 90 },
+    ];
 
     const handleClick = () => {
         closeModal()
@@ -12,7 +22,7 @@ export function ModalPokemonInfo ({ pokemon,isOpen,closeModal }) {
 
     return (
         <div className="fixed inset-0 w-screen h-screen grid place-items-center backdrop-brightness-35">
-            <div className="w-4xl h-4xl bg-gray-100 mx-10 p-8 rounded-xl shadow-2xl flex flex items-center flex-col justify-center gap-6">
+            <div className="max-w-4xl max-h-4xl lg:w-4xl lg:h-4xl bg-gray-100 mx-10 p-8 rounded-xl shadow-2xl flex flex items-center flex-col justify-center  gap-6 overflow-y-auto">
                 <div className="flex justify-between w-full items-center">
                     <p className="text-gray-500 font-bold text-2xl flex justify-items-start w-full ">#{pokemonNumber}</p>
                     <button type="button" onClick={handleClick}>
@@ -21,8 +31,8 @@ export function ModalPokemonInfo ({ pokemon,isOpen,closeModal }) {
                         </svg>
                     </button>
                 </div>
-                <div className="grid grid-cols-2 gap-8 w-full">
-                    <div className="flex justify-center items-center flex-col gap-6">
+                <div className="grid md:grid-cols-2 gap-8 w-full items-start place-items-center">
+                    <div className="flex place-items-center flex-col gap-6">
                         <h2 className="font-bold text-3xl uppercase text-gray-600">{pokemon.name}</h2>
                         <img src={imgURL} alt={`Imagen de ${pokemon.name}`} />
                         <div className="flex items-center text-center flex-wrap gap-2">
@@ -34,8 +44,9 @@ export function ModalPokemonInfo ({ pokemon,isOpen,closeModal }) {
                             <p className="text-gray-500 font-bold">Peso: <span className="text-gray-600">{pokemon.weight}kg</span></p>
                         </div>
                     </div>
-                    <div className="flex justify-center items-center flex-col">
-                        <h2 className="font-bold text-3xl uppercase text-gray-600">Estadísticas base</h2>
+                    <div className="flex items-center flex-col w-full">
+                        <h2 className="font-bold text-3xl uppercase text-gray-600 mb-6">Estadísticas base</h2>
+                        <PokemonStatsChart stats={pokemon.stats} />
                     </div>
                 </div>
             </div>
