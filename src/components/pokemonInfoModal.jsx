@@ -1,20 +1,11 @@
 import PokemonStatsChart from './pokemonStatsChart';
 import { IMAGES_URL } from '../constants';
 
-export function ModalPokemonInfo ({ pokemon,isOpen,closeModal }) { console.log(pokemon)
+export function PokemonInfoModal ({ pokemon,isOpen,closeModal }) { 
     if(!isOpen) return null
 
     const pokemonNumber = pokemon.id.toString().padStart(3, '0')
     const imgURL = pokemon ? IMAGES_URL+pokemonNumber+".png" : ""
-
-    const formattedStats  = [
-        { name: "HP", value: 35 },
-        { name: "Ataque", value: 55 },
-        { name: "Defensa", value: 40 },
-        { name: "At. Esp.", value: 50 },
-        { name: "Def. Esp.", value: 50 },
-        { name: "Velocidad", value: 90 },
-    ];
 
     const handleClick = () => {
         closeModal()

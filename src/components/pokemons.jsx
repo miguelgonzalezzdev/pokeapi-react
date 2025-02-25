@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { usePokemonInfo } from '../hooks/usePokemonInfo';
-import { ModalPokemonInfo } from './modalPokemonInfo';
+import { PokemonInfoModal } from './pokemonInfoModal';
 import { IMAGES_URL } from '../constants';
 
 export function PokemonCard ({id,name}){
@@ -29,7 +29,7 @@ export function PokemonCard ({id,name}){
                     </div>
                 
                 </div> 
-                <ModalPokemonInfo pokemon={pokemonInfo} isOpen={openModal} closeModal={() => {setOpenModal(false)}}/>
+                <PokemonInfoModal pokemon={pokemonInfo} isOpen={openModal} closeModal={() => {setOpenModal(false)}}/>
             </>        
           : <p>Cargando...</p>
     )
@@ -53,6 +53,6 @@ export function RenderPokemons ({pokemons}){
 
 export function NoPokemonsResult (){
     return (
-        <p className="my-15 font-bold text-xl">No se encontraron pokemons</p>
+        <p className="my-15 text-gray-50 font-bold text-xl">No se encontraron pokemons</p>
     )
 }

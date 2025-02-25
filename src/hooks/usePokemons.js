@@ -1,11 +1,15 @@
-import { useState } from 'react'
+import { useState,useRef } from 'react'
 import { searchPokemons } from '../services/searchPokemons'
 
-export function usePokemons({ search }) {
+export function usePokemons({ search, filter }) {
     const [pokemons, setPokemons] = useState([])
+    const previousSearch = useRef({ search: null, filter: null })
 
-    const getPokemons = async () => {
-        const newPokemons = await searchPokemons({ search })
+    const getPokemons = async ({ search, filter }) => {
+        if (search === previousSearch.current.search && filter === previousSearch.current.filter) return
+
+        previousSearch.current = { search, filter };
+        const newPokemons = await searchPokemons({ search,filter })
         setPokemons(newPokemons)
     }
 
