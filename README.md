@@ -16,7 +16,7 @@ Pokedex diseñada con **[React](https://react.dev/)** usando **[pokeapi.co](http
 
 - Listado de Pokémon
 
-![Imagen del proyecto donde puede visualizarse el listado de todos los Pokémon](https://github.com/user-attachments/assets/1018abfd-95a0-43ae-85c1-1b15122141e1)
+![Imagen del proyecto donde puede visualizarse el listado de todos los Pokémon](https://github.com/user-attachments/assets/4e67015c-94f4-4e09-a3d3-9caf4862e0a6)
 
 - Información del Pokémon
 
