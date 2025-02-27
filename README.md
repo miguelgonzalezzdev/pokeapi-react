@@ -42,7 +42,7 @@ git clone https://github.com/miguelgonzalezzdev/pokeapi-react.git
 
 ### 2. Instalar las dependencias
 
-Dentro de la carpeta del proyecto, instalar las dependencias con:
+Dentro de la carpeta del proyecto, instala las dependencias con:
 
 ```shell
 npm install
